@@ -1,26 +1,226 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-sans: var(--font-sans);
+  --font-mono: Space Mono, monospace;
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-heading: var(--font-sans);
+
+  --radius: 12px;
+
+  --tracking-normal: var(--tracking-normal);
+  --tracking-tight: calc(var(--tracking-normal) - 0.025em);
+  --tracking-wide: calc(var(--tracking-normal) + 0.025em);
+
+  --shadow-2xl: var(--shadow-2xl);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-md: var(--shadow-md);
+  --shadow: var(--shadow);
+  --shadow-sm: var(--shadow-sm);
+  --shadow-xs: var(--shadow-xs);
+
+  --spacing: var(--spacing);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-ring: var(--ring);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* ============ Soft Neo Brutalism ============ */
+
+  /* main */
+  --background: oklch(0.98 0.015 90); /* warm cream */
+  --foreground: oklch(0.23 0.02 260); /* soft charcoal */
+
+  /* cards */
+  --card: oklch(0.99 0.012 95); /* off white */
+  --card-foreground: oklch(0.23 0.02 260);
+
+  /* popover */
+  --popover: oklch(0.99 0.012 95);
+  --popover-foreground: oklch(0.23 0.02 260);
+
+  /* accent colors */
+  --primary: oklch(0.84 0.17 140); /* neo green */
+  --primary-foreground: oklch(0.18 0 0);
+
+  --secondary: oklch(0.82 0.15 250); /* soft vibrant blue */
+  --secondary-foreground: oklch(1 0 0);
+
+  --accent: oklch(0.92 0.14 95); /* warm yellow */
+  --accent-foreground: oklch(0.18 0 0);
+
+  /* ui */
+  --muted: oklch(0.95 0.015 250); /* powder blue bg */
+  --muted-foreground: oklch(0.42 0.02 260);
+
+  --destructive: oklch(0.67 0.22 25);
+  --destructive-foreground: oklch(1 0 0);
+
+  /* border */
+  --border: oklch(0.28 0.015 260); /* charcoal */
+  --input: oklch(0.88 0.02 250);
+  --ring: oklch(0.82 0.15 250);
+
+  /* charts */
+  --chart-1: oklch(0.84 0.17 140); /* green */
+  --chart-2: oklch(0.82 0.15 250); /* blue */
+  --chart-3: oklch(0.92 0.14 95); /* yellow */
+  --chart-4: oklch(0.88 0.09 40); /* peach */
+  --chart-5: oklch(0.79 0.08 180); /* mint */
+
+  /* sidebar */
+  --sidebar: oklch(0.97 0.01 95);
+  --sidebar-foreground: oklch(0.23 0.02 260);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: oklch(0.18 0 0);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+
+  /* fonts */
+  --font-sans: DM Sans, sans-serif;
+  --font-mono: Space Mono, monospace;
+
+  /* neo brutalism */
+  --radius: 12px;
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  /* softer shadow */
+  --shadow-color: hsl(220 15% 20%);
+  --shadow-opacity: 0.35;
+  --shadow-blur: 0px;
+  --shadow-spread: 0px;
+  --shadow-offset-x: 5px;
+  --shadow-offset-y: 5px;
+
+  --shadow-xs: 3px 3px 0px hsl(220 15% 20% / 0.15);
+  --shadow-sm: 4px 4px 0px hsl(220 15% 20% / 0.2);
+  --shadow: 5px 5px 0px hsl(220 15% 20% / 0.25);
+  --shadow-md: 6px 6px 0px hsl(220 15% 20% / 0.3);
+  --shadow-lg: 7px 7px 0px hsl(220 15% 20% / 0.35);
+  --shadow-xl: 8px 8px 0px hsl(220 15% 20% / 0.4);
+  --shadow-2xl: 10px 10px 0px hsl(220 15% 20% / 0.45);
+}
+
+.dark {
+  /* not pure black */
+  --background: oklch(0.19 0.02 260); /* slate navy */
+  --foreground: oklch(0.95 0.01 90); /* cream */
+
+  --card: oklch(0.25 0.02 260);
+  --card-foreground: oklch(0.95 0.01 90);
+
+  --popover: oklch(0.25 0.02 260);
+  --popover-foreground: oklch(0.95 0.01 90);
+
+  --primary: oklch(0.84 0.17 140);
+  --primary-foreground: oklch(0.18 0 0);
+
+  --secondary: oklch(0.82 0.15 250);
+  --secondary-foreground: oklch(1 0 0);
+
+  --accent: oklch(0.92 0.14 95);
+  --accent-foreground: oklch(0.18 0 0);
+
+  --muted: oklch(0.29 0.02 260);
+  --muted-foreground: oklch(0.78 0.01 260);
+
+  --border: oklch(0.92 0.01 90 / 0.15);
+  --input: oklch(0.35 0.02 260);
+  --ring: var(--accent);
+
+  --sidebar: oklch(0.22 0.02 260);
+  --sidebar-foreground: oklch(0.95 0.01 90);
+  --sidebar-border: var(--border);
+}
+
+@layer base {
+  body {
+    letter-spacing: var(--tracking-normal);
+    @apply bg-background text-foreground antialiased;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .shadow-neo {
+    box-shadow: 4px 4px 0px var(--border);
+    border: 3px solid var(--primary-foreground);
+  }
+
+  .shadow-neo-sm {
+    box-shadow: 2px 2px 0px var(--border);
+  }
+
+  .shadow-neo-lg {
+    box-shadow: 6px 6px 0px var(--border);
+  }
+
+  .shadow-neo-press:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+  }
+
+  .neo-box {
+    border: 3px solid var(--border);
+    border-radius: 14px;
+    background: var(--card);
+    color: var(--card-foreground);
+    box-shadow: 4px 4px 0px var(--border);
+  }
+
+  .neo-box-sm {
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    background: var(--card);
+    color: var(--card-foreground);
+    box-shadow: 2px 2px 0px var(--border);
+  }
+
+  .neo-box-lg {
+    border: 4px solid var(--border);
+    border-radius: 16px;
+    background: var(--card);
+    color: var(--card-foreground);
+    box-shadow: 6px 6px 0px var(--border);
+  }
+
+  .neo-grid {
+    background-color: #f8f7f2;
+    background-image: linear-gradient(
+        to right,
+        rgba(40, 40, 40, 0.08) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgba(40, 40, 40, 0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
 }

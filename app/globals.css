@@ -168,6 +168,12 @@
   html {
     @apply font-sans;
   }
+  html::-webkit-scrollbar {
+    display: none;
+  }
+  html {
+    -ms-overflow-style: none;
+  }
 }
 
 @layer utilities {
@@ -225,5 +231,11 @@
   }
   .content-container {
     @apply mx-auto xl:w-3/4 w-11/12 md:w-4/5;
+  }
+  .btn-icon-sm {
+    @apply size-4 mr-1;
+  }
+  .section-padding {
+    @apply py-10 md:py-24;
   }
 }

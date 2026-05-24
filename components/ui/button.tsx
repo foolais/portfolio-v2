@@ -12,7 +12,7 @@ const buttonVariants = cva(
         default:
           "bg-primary text-primary-foreground hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg",
         outline:
-          "bg-background text-primary-foreground hover:bg-muted hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg",
+          "bg-background text-primary-foreground hover:bg-accent hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg",
         secondary:
           "bg-secondary text-primary-foreground hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg",
         ghost:

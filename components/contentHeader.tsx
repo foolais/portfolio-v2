@@ -16,11 +16,11 @@ const ContentHeader = () => {
   const pathname = usePathname();
 
   return (
-    <header className="py-4 border-dashed border-b-2 border-primary-foreground bg-background">
+    <header className="py-4 border-dashed border-b-2 border-primary-foreground bg-background sticky top-0 isolate z-10">
       <div className="content-container flex justify-between items-center">
         <div className="flex items-center gap-2">
           <CodeXml />
-          <h1 className="text-2xl font-bold">WahyuEn</h1>
+          <h1 className="text-2xl font-bold">WahyuEN</h1>
         </div>
         <ul className="items-center justify-between gap-8 hidden md:flex">
           {dataHeader.map((item) => {
@@ -29,7 +29,7 @@ const ContentHeader = () => {
               <Button
                 key={item.href}
                 size="sm"
-                variant={isActive ? "default" : "ghost"}
+                variant={isActive ? "default" : "outline"}
                 asChild
               >
                 <Link href={item.href}>{item.title}</Link>

@@ -4,7 +4,7 @@ const ContentLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <ContentHeader />
-      <div className="content-container py-4">{children}</div>
+      <div className="content-container">{children}</div>
     </>
   );
 };

@@ -15,6 +15,8 @@ const buttonVariants = cva(
           "bg-background text-primary-foreground hover:bg-accent hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg",
         secondary:
           "bg-secondary text-primary-foreground hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg",
+        accent:
+          "bg-accent text-primary-foreground hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg",
         ghost:
           "bg-muted text-primary-foreground hover:bg-accent hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-neo-lg",
         destructive:
